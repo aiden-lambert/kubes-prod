@@ -1,7 +1,8 @@
 language: python
 python:
-    - '3.8'
-install: true
+    - '3.8' 
+  install: 
+    - true
 sudo: required
 services:
     - docker
