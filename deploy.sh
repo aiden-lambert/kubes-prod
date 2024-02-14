@@ -12,3 +12,4 @@
     - kubectl set image deployments/server-deployment server=aidenlambert94/multi-server:$SHA
     - kubectl set image deployments/client-deployment client=aidenlambert94/multi-client:$SHA
     - kubectl set image deployments/worker-deployment worker=aidenlambert94/multi-worker:$SHA
+    ## kubectl set image deployment/client-deployment client=aidenlambert94/multi-client:$SHA
