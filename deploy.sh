@@ -1,3 +1,4 @@
+    - set -x
     - docker build -t aidenlambert94/multi-client:latest -t aidenlambert94/multi-client:$SHA -f ./client/Dockerfile ./client
     - docker build -t aidenlambert94/multi-server:latest -t aidenlambert94/multi-server:$SHA -f ./server/Dockerfile ./server
     - docker build -t aidenlambert94/multi-worker:latest -t aidenlambert94/multi-worker:$SHA -f ./worker/Dockerfile ./worker
