@@ -19,10 +19,10 @@ before_install:
     - gcloud config set compute/zone australia-southeast1-a
     - gcloud container clusters get-credentials multi-cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker build -t aidenlambert94/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker build -t kubes414300/multi-client-test -f Dockerfile.dev ./client
-    - docker run -e CI=true kubes414300/multi-client-test npm test
+    - docker run -e CI=true aidenlambert94/react-test npm test
 
 deploy:
     provider: script
