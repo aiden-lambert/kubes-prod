@@ -20,6 +20,10 @@ before_install:
     - gcloud container clusters get-credentials multi-cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
+script:
+    - docker build -t kubes414300/multi-client-test -f Dockerfile.dev ./client
+    - docker run -e CI=true kubes414300/multi-client-test npm test
+
 deploy:
     provider: script
     script: bash ./deploy.sh
